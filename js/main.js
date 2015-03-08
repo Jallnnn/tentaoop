@@ -56,9 +56,10 @@ $(function() {
 
 						
 					}
-						$(".playChallenge").append("The winner of the challenge is: "+data.result[0].name+" You gained 15 success points"+"<br>");
-						$(".playChallenge").append("Second place goes to: "+data.result[1].name+" You gained nor lost any success points"+"<br>");
-						$(".playChallenge").append("Last place goes to: "+data.result[2].name+" You lost 5 success points"+"<br>");
+						$(".playChallenge").append("The winner of the challenge is: "+data.result[0].name+" You gained 15 success points"+"<br>"+data.result[0].name+" har nu "+data.result[0].success+" poäng.<br><br>");
+						$(".playChallenge").append("Second place goes to: "+data.result[1].name+" You gained nor lost any success points"+"<br>"+data.result[1].name+" har nu "+data.result[1].success+" poäng.<br><br>");
+						$(".playChallenge").append("Last place goes to: "+data.result[2].name+" You lost 5 success points"+"<br>"+data.result[2].name+" har nu "+data.result[2].success+" poäng.<br><br>");
+						
 
 
 						console.log("Carried out challenge", data);
