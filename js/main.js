@@ -59,7 +59,36 @@ $(function() {
 						$(".playChallenge").append("The winner of the challenge is: "+data.result[0].name+" You gained 15 success points"+"<br>"+data.result[0].name+" har nu "+data.result[0].success+" poäng.<br><br>");
 						$(".playChallenge").append("Second place goes to: "+data.result[1].name+" You gained nor lost any success points"+"<br>"+data.result[1].name+" har nu "+data.result[1].success+" poäng.<br><br>");
 						$(".playChallenge").append("Last place goes to: "+data.result[2].name+" You lost 5 success points"+"<br>"+data.result[2].name+" har nu "+data.result[2].success+" poäng.<br><br>");
-						
+
+						if(data.result[0].success >= 100) {
+							$(".playChallenge").text(data.result[0].name+' vann med ' +data.result[0].success +' poäng!!');
+							$('.selectNewChallenge').hide();
+						}
+
+						if(data.result[1].success >= 100) {
+							$(".playChallenge").text(data.result[1].name+' vann med ' +data.result[1].success +' poäng!!');
+							$('.selectNewChallenge').hide();
+						}
+
+						if(data.result[2].success >= 100) {
+							$(".playChallenge").text(data.result[2].name+' vann med ' +data.result[2].success +' poäng!!');
+							$('.selectNewChallenge').hide();
+						}
+
+						if(data.result[0].success <= 0) {
+							$(".playChallenge").text(data.result[0].name+' förlorade med ' +data.result[0].success +' poäng!!');
+							$('.selectNewChallenge').hide();
+						}
+
+						if(data.result[1].success <= 0) {
+							$(".playChallenge").text(data.result[1].name+' förlorade med ' +data.result[1].success +' poäng!!');
+							$('.selectNewChallenge').hide();
+						}
+
+						if(data.result[2].success <= 0) {
+							$(".playChallenge").text(data.result[2].name+' förlorade med ' +data.result[2].success +' poäng!!');
+							$('.selectNewChallenge').hide();
+						}
 
 
 						console.log("Carried out challenge", data);
